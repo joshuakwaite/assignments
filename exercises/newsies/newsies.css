@@ -1,0 +1,64 @@
+h1 {
+    font-family: cursive;
+    text-align: center;
+    font-size: 40px;
+}
+
+hr {
+    height: 2px;
+    background: black;
+    border-bottom: 1px solid #313030;
+}
+
+#sidebar {
+    display: inline-block;  
+    width: 20%;
+    vertical-align: top;
+    border-right: thick solid black;
+    height:1000px
+}
+.main1 {
+    display: inline-block;;
+    width:70%;
+    vertical-align: top;
+    
+}
+h2 {
+    display: inline
+}
+
+
+#imageMo {
+    width: 150px;
+    height: auto;
+    float: left;
+    align-content: center;
+    padding-right: 5px;
+}
+
+#imageTwo
+{
+    width: 200px;
+    height: auto;
+    float: right;
+    align-content: center;
+    
+
+    
+    
+}
+
+#imageThree {
+    width: 200px;
+    height: auto;
+    float: right;
+    align-content: center;
+    padding-right: 5px;
+}
+#date {
+    text-align: right;
+}
+
+strong#headerOne {
+    text-align: center;
+}
