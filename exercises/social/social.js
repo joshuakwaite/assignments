@@ -10,6 +10,9 @@ var primaryFamilyMember = {
             type: "family",
             fathersName: "Mark",
             mothersName: "Laura",
+            sayFamilyName: function() {
+                alert("We are the Cope family.")
+            },
             isPets: true
         }
     ],
@@ -55,5 +58,6 @@ primaryFamilyMember.favoriteHobbies = ["volleyball", "netflix"]
 
 
 document.getElementById("write").innerHTML = JSON.stringify(primaryFamilyMember.extendedFamilyName[0])
+primaryFamilyMember.extendedFamilyName[0].sayFamilyName()
 
 

@@ -10,12 +10,17 @@ hr {
     border-bottom: 1px solid #313030;
 }
 
+p {
+    display: inline-block;
+}
+
 #sidebar {
     display: inline-block;  
     width: 20%;
     vertical-align: top;
     border-right: thick solid black;
-    height:1000px
+    height:1000px;
+    padding: 5px;
 }
 .main1 {
     display: inline-block;;
@@ -23,17 +28,19 @@ hr {
     vertical-align: top;
     
 }
+
 h2 {
     display: inline
 }
 
 
 #imageMo {
-    width: 150px;
+    max-width: 100%;
+    width: auto;
     height: auto;
     float: left;
     align-content: center;
-    padding-right: 5px;
+    padding-bottom: 10px;
 }
 
 #imageTwo
@@ -42,9 +49,6 @@ h2 {
     height: auto;
     float: right;
     align-content: center;
-    
-
-    
     
 }
 
