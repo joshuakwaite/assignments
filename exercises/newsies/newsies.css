@@ -1,68 +1,82 @@
+
+
+body {
+    font-family: serif;
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: auto;
+    left: 0;
+    right: 0
+}
+
+main {
+    display: flex;
+}
+
 h1 {
-    font-family: cursive;
-    text-align: center;
-    font-size: 40px;
-}
-
-hr {
-    height: 2px;
-    background: black;
-    border-bottom: 1px solid #313030;
-}
-
-p {
-    display: inline-block;
-}
-
-#sidebar {
-    display: inline-block;  
-    width: 20%;
-    vertical-align: top;
-    border-right: thick solid black;
-    height:1000px;
-    padding: 5px;
-}
-.main1 {
-    display: inline-block;;
-    width:70%;
-    vertical-align: top;
-    
+    font-family: sans-serif;
 }
 
 h2 {
-    display: inline
+    text-align: center;
+    font-family: sans-serif;
 }
 
-
-#imageMo {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    float: left;
-    align-content: center;
-    padding-bottom: 10px;
+header {
+    text-align: center;
 }
-
-#imageTwo
-{
-    width: 200px;
-    height: auto;
-    float: right;
-    align-content: center;
+nav {
+    width: 30%;
+    display: inline-block;
+    position: static;
+    border-right: 0px solid black;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 1px solid black;
+    margin: 0px;
+    border-bottom: 0px;
     
 }
 
-#imageThree {
-    width: 200px;
-    height: auto;
-    float: right;
-    align-content: center;
-    padding-right: 5px;
-}
-#date {
-    text-align: right;
+article {
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 1px solid black;
 }
 
-strong#headerOne {
-    text-align: center;
+#moReeder {
+    max-width: 100%;
+    object-position;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+section {
+    width: 70%;
+    display: inline-block;
+    padding-right: 10px;
+    border: 1px solid black;
+    margin: 0px;
+    padding-left: 10px;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+
+#imageTwo {
+    width: 85%;
+    height: 25%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: block
+    
+}
+
+img.center{
+    
+}
+
+#date {
+    text-align: right;
 }

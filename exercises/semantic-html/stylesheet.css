@@ -1,0 +1,26 @@
+section {
+    column-count: 2;
+}
+
+h1 {
+    text-align: center;
+    font-family: cursive;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    padding-bottom: 5px;
+}
+
+hr {
+    width: auto;
+    border-top: 2px solid grey;
+}
+
+footer {
+    color: grey;
+    text-align: center;
+    font-family: cursive
+}
