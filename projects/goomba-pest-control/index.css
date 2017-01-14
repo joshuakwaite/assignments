@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    
+}
+html {
+    background-image:url(bg4.jpg);
+    background-size:cover;
+}
+
+body {
+    max-width: 900px;
+    min-width: 500px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    font-size: 2em;
+}
+
+main {
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2em;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+div {
+    text-align: center;
+}
+
+
+input {
+    margin: auto;
+    right: 0;
+    left: 0;
+    display: block;
+}
+
+input[type=text] {
+    width: 100px;
+    height: auto;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+    
+}
+
+input[type=button] {
+    font-size: 30px;
+  
+}
+
+.coinNumber {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+#button {
+    margin: auto;
+    left: 0;
+    right: 0;
+    display:block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#section1 {
+    width: 300px;
+    display: inline-block;
+    border: 1px solid black;
+    
+}
+
+#section2 {
+    width: 300px;
+    display: inline-block;
+    border: 1px solid black;
+    border-left: 0px;
+    border-right; 0px;
+}
+
+#section3 {
+    width: 300px;
+    display: inline-block;
+    border: 1px solid black;
+    border-left: 0px;
+}
+
+img {
+    max-width: 200px;
+    max-height: 195px;
+    min-width: 200px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

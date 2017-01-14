@@ -1,16 +1,16 @@
 // EXERCISE ONE
 
-/*
+
 var name = "Joshua Kale Waite"
 
 for (var i = 0 ; i < name.length; i++) {
     console.log(name[i])
 } 
-*/
+
 
 // EXERCISE TWO
 
-/*
+
 var isFound = false
 
 function findThis (string,letter) {
@@ -27,11 +27,11 @@ function findThis (string,letter) {
 }
 
 findThis("apple","g");
-*/
+
 
 // EXERCISE THREE
 
-/*
+
 function myFunction(x) {
     for (var i = 0; i < x.length; i++){
         console.log(x[i])
@@ -42,7 +42,7 @@ function myFunction(x) {
 }
 
 myFunction([1,3,5,7,9,13,34,24,63,42,45,77,95,35,85])
-*/
+
 
 // EXERCISE FOUR
 
