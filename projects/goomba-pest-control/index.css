@@ -8,8 +8,7 @@ html {
 }
 
 body {
-    max-width: 900px;
-    min-width: 500px;
+    max-width: 750px;
     margin: auto;
     left: 0;
     right: 0;
@@ -24,12 +23,20 @@ main {
 
 header {
     text-align: center;
+    padding-bottom: 10px;
+    padding-top; 10px;
+    margin-top: 20px;
+    background-color: #ec3b2e;
+    color: white;
 }
 
 h1 {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     font-size: 2em;
+    margin: 0px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 h2 {
@@ -50,6 +57,11 @@ input {
     right: 0;
     left: 0;
     display: block;
+}
+
+article {
+    background-color: #ec3b2e;
+    padding-top: 10px;
 }
 
 input[type=text] {
@@ -76,34 +88,36 @@ input[type=button] {
     left: 0;
     right: 0;
     display:block;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 #section1 {
-    width: 300px;
+    width: 250px;
     display: inline-block;
     border: 1px solid black;
+    border-left: 0px;
+    background-color: #40b34f;
     
 }
 
 #section2 {
-    width: 300px;
+    width: 250px;
     display: inline-block;
     border: 1px solid black;
     border-left: 0px;
     border-right; 0px;
+    background-color: #fed330;
 }
 
 #section3 {
-    width: 300px;
+    width: 250px;
     display: inline-block;
     border: 1px solid black;
     border-left: 0px;
+    border-right: 0px;
+    background-color: #1daee4;
 }
 
 img {
-    max-width: 200px;
     max-height: 195px;
     min-width: 200px;
     margin: auto;
@@ -112,4 +126,12 @@ img {
     display: block;
     margin-top: 40px;
     margin-bottom: 40px;
+}
+
+#logo {
+    max-height: 50px;
+    max-width: auto;
+    display: inline-block;
+    margin: 0px;
+    vertical-align: middle;
 }
