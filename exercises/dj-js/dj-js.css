@@ -1,0 +1,22 @@
+body {
+    width: 900px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+span {
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.box {
+    height: 400px;
+    display: inline-block;
+}
+
+.one {
+    background-color: brown;
+    width: 400px;
+}

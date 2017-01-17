@@ -1,5 +1,5 @@
 body {
-    width: 900px;
+    width: 700px;
     margin: auto;
     left: 0px;
     right: 0px;
@@ -11,11 +11,11 @@ main {
     width: 100%;
     padding: 5px;
     text-align: center;
-    background-color: aqua
 }
 input {
     font-size: 1em;
     text-align: center;
+    width: 150px;
 }
 
 #sectionOne {
@@ -32,18 +32,18 @@ div>div {
 
 input[type="button"] {
     display: block;
-    width: 150px
+    width: 125px
 }
 
 #sectionOne {
-    background-color: palevioletred;
+    background-color: deeppink;
 }
 
 #sectionTwo {
-    background-color: coral;
+    background-color: deepskyblue;
 }
 
 #sectionThree {
-    background-color: darkgreen;
+    background-color: limegreen;
 }
 
