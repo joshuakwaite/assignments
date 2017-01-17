@@ -1,0 +1,49 @@
+body {
+    width: 900px;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    font-size: 2em;
+}
+
+main {
+    margin-top: 100px;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background-color: aqua
+}
+input {
+    font-size: 1em;
+    text-align: center;
+}
+
+#sectionOne {
+    padding-top: 10px;
+}
+
+div {
+    padding: 10px;
+}
+
+div>div {
+    display: inline-block;
+}
+
+input[type="button"] {
+    display: block;
+    width: 150px
+}
+
+#sectionOne {
+    background-color: palevioletred;
+}
+
+#sectionTwo {
+    background-color: coral;
+}
+
+#sectionThree {
+    background-color: darkgreen;
+}
+

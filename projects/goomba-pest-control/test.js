@@ -16,7 +16,7 @@
 
 var startHi = function(str){     
     console.log(str.substr(0,2))
-  if (str.substr(0,2 == "hi")) {
+  if (str.substr(0,2 === "hi")) {
       return true;
       } else {
       return false;

@@ -3,6 +3,7 @@
     font-size: 0px;
 }
 
+
 body {
     max-width: 700px;
     margin: auto;
@@ -39,4 +40,18 @@ body {
 .orange {
     width: 25%;
     background-color: #E76E34
+}
+
+@media only screen and (max-width: 768px){
+
+    * {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+    
+.box {
+    display: block;
+    width: 100%;
+    
+    }
 }
