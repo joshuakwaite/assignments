@@ -1,0 +1,36 @@
+body {
+    width: 800px;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    background-color: #555;
+
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    margin-bottom: 40px;
+    padding-bottom: 40px
+}
+li {
+    display: inline-block;
+    font-size: 2em;
+    margin-right: 20px;
+    text-align: center;
+    width: 150px;
+    margin-top: 3px;
+}
+h1 {
+    margin-top: 50px;
+}
+
+li:hover {
+    background-color: lime;
+}
+
+#firstPara {
+    padding-top: 60px;
+}

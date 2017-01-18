@@ -23,7 +23,10 @@ var james = new Employee("James Willy", "Accountant", "$80,000/yr");
 
 var rebekah = new Employee("Rebekah Waite", "Receptionist", "30,000/yr");
 
+james.status = "Contract";
+
+jim.printEmployeeForm();
 
 employees.push(jim, james, rebekah)
 
-console.log(employees)
+console.log(employees);
