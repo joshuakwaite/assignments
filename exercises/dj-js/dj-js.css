@@ -20,3 +20,10 @@ span {
     background-color: brown;
     width: 400px;
 }
+
+.box2 {
+    height: 400px;
+    display: inline-block;
+    background-color: black;
+    width: 400px;
+}

@@ -1,26 +1,60 @@
 var divBox = document.getElementById("box")
 
-function changeBlue () {
+function changeBlue() {
     divBox.style.backgroundColor = "blue";
 }
 
-divBox.addEventListener("click",changeBlue)
+function changeWhite() {
+    divBox.style.backgroundColor = "white";
+}
+
+divBox.addEventListener("mouseover", changeBlue)
 
 
-function changeRed () {
+function changeRed() {
     divBox.style.backgroundColor = "red";
 }
 
-divBox.addEventListener("mousedown",changeRed)
+divBox.addEventListener("mousedown", changeRed)
 
-function changeYellow () {
+function changeYellow() {
     divBox.style.backgroundColor = "yellow";
 }
 
-divBox.addEventListener("mouseup",changeYellow)
+divBox.addEventListener("mouseup", changeYellow)
 
-function changeOrange () {
+function changeOrange() {
     divBox.style.backgroundColor = "orange";
 }
 
-divBox.addEventListener("scroll",changeOrange)
+window.addEventListener("scroll", changeOrange)
+
+function changeGreen() {
+    divBox.style.backgroundColor = "green";
+}
+
+divBox.addEventListener("dblclick", changeGreen)
+
+function keypress(event) {
+        switch (event.which) {
+            case 89:
+                changeYellow();
+                break;
+            case 71:
+                changeGreen();
+                break;
+            case 79:
+                changeOrange();
+                break;
+            case 82:
+                changeRed();
+                break;
+            case 66:
+                changeBlue();
+                break;
+            default:
+                changeWhite();       
+        }
+}
+
+document.addEventListener("keydown",keypress)
