@@ -1,0 +1,67 @@
+{
+    "appetizers": [
+        {
+            "name": "Chips and Salsa",
+            "description": "For the weirdos.",
+            "ingredients": ["corn chips", "fresh salsa"]
+        },
+        {
+            "name": "Fresh Fruit",
+            "description": "Fresh fruit for the healthy people.",
+            "ingredients": ["Bannanas", "apples", "oranges", "grapes"]
+
+        }
+    ],
+    "cold sandwhiches": [
+        {
+            "name": "Peanut Butter and Banana",
+            "description": "I mean, it has peanut butter and banana.",
+            "ingredients": ["figure it out"]
+        },
+        {
+            "name": "The Starving Artist",
+            "description": "This is for all those poor artists out there.",
+            "ingredients": ["bread"]
+
+        }
+    ],
+    "hot sandwhiches": [
+        {
+            "name": "Hotpockets",
+            "description": "Pockets of hot, yummy, totally unleathy stuff.",
+            "ingredients": ["Molten lava"]
+        },
+        {
+            "name": "Grilled Cheese",
+            "description": "Grilled cheese, not in the traditional sense.",
+            "ingredients": ["cheese that is grilled"]
+
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Vanilla Icecream",
+            "description": "Keeping it original.",
+            "ingredients": ["milk", "sugar"]
+        },
+        {
+            "name": "Cookies",
+            "description": "Because dessert, man.",
+            "ingredients": ["gluten"]
+
+        }
+    ],
+    "drinks":[
+        {
+            "name": "Water",
+            "description": "The clear stuff that you drink.",
+            "ingredients": "Two parts oxygen one part hydrogen."
+        },
+        {
+            "name": "Fruit Punch",
+            "description": "Spiked, watch out.",
+            "ingredients": "Water, sugar, and alcohol..."
+
+        }
+    ]
+}

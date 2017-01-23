@@ -1,16 +1,17 @@
 var readline = require("readline-sync");
 var randomEnemy = []
-var menu = ["View HP", "View Inventory", "Quit"]
+var menu = ["View HP", "Use Inventory", "Quit", "Print Stuff"]
 var inventory = ["Healing Potion"]
 var randomFriend = ["Pixie", "Faerie"]
 var userHealth = 100
 var maxHealth = 100
 var help = ("Walk - Push 'W' to walk\n")
 var quit = false;
-var healingPotion = 25;
+var healingPotion = 75;
 var fightQuestionTwo = ""
 var run = false
 var fightMenu = ["Punch", "Use Item in Inventory", "Run"]
+
 
 /******************************************
  ***********HELPER FUNCTIONS***************/
@@ -23,6 +24,12 @@ function typeGenerator() {
     var enemyType = ["Werewolf", "Vampire Underling", "Ghost"];
     return enemyType[Math.floor(Math.random() * enemyType.length)];
 }
+
+function itemGenerator() {
+    var itemType = ["Healing Potion", "Bomb", "Wooden Stake"];
+    return itemType[Math.floor(Math.random() * itemType.length)]
+}
+
 
 function hpGenerator(x) {
     if (x === "Werewolf") {
@@ -44,9 +51,52 @@ function Enemies() {
 function fightMode() {
     while (randomEnemy.hitpoints > 0 && userHealth > 0 && run != true) {
         console.log("\nHere we go!\n")
-        var fightChoice = readline.keyInSelect(fightMenu, "Choose what you would like to do.")
-    }
+        for (var i = 0; randomEnemy.hitpoints > 0; i++) {
+            if ([i] % 2) {
+                userHealth -= randomEnemy.attackPower
+                if (userHealth <= 0) {
+                    userHealth = 0
+                }
+                console.log("The " + randomEnemy.type + " hits you for " + randomEnemy.attackPower + " hp.\n\nYour hp is now at " + userHealth + ".")
+                if (userHealth <= 0) {
+                    return 'q'
+                }
+            } else {
+                var fightChoice = readline.keyInSelect(fightMenu, "Choose what you would like to do.")
+                if (fightMenu[fightChoice] === "Punch") {
+                    var attackDamage = randomNumber(10,30)
+                    randomEnemy.hitpoints -= attackDamage
+                    console.log("You punched the enemy for " + attackDamage + " hp")
+                } else if (fightMenu[fightChoice] === "Use Item in Inventory") {
+                    var inventoryIndex = readline.keyInSelect(inventory, "What would you like to use?")
+                    if (inventory[inventoryIndex] === "Healing Potion") {
+                        userHealth = userHealth + healingPotion;
+                        inventory.splice(inventoryIndex, 1)
+                        if (userHealth > maxHealth) {
+                            userHealth = maxHealth;
+                        }
+                        console.log("\n\n'Yuck'.. That tastes nasty, but your health increased by " + healingPotion + " HP It is now at " + userHealth + ".")
+                    }
 
+                } else if (fightMenu[fightChoice] === "Run") {
+                    var run = "run"
+                    runOrFight(run);
+                    return run = true;
+                }
+
+            }
+        }
+        if (randomEnemy.hitpoints <= 0) {
+            console.log("congratulations! You've killed the " + randomEnemy.type + "!")
+            var newItem = itemGenerator();
+            inventory.push(newItem);
+            console.log("The monster dropped an item! " + newItem + " has been added to your inventory." )
+            
+        } else {
+            dead();
+            return 'q'
+        }
+    }
 }
 
 function runOrFight(x) {
@@ -56,12 +106,14 @@ function runOrFight(x) {
         if (randomNumber(0, 2) === 0) {
             console.log("Whew, looks like you got away")
         } else {
-            console.log("You tried to escape, but couldn't! The monster takes a swipe at you and damages you for " + randomEnemy.attackPower + " hp!")
             userHealth -= randomEnemy.attackPower;
+            if (userHealth <= 0) {
+                userHealth = 0
+            }
+            console.log("You tried to escape, but couldn't! The monster takes a swipe at you and damages you for " + randomEnemy.attackPower + " hp!\n\nYour hp is now at " + userHealth)
             if (userHealth < 1) {
-                dead();
                 return 'q';
-                
+
             }
             console.log("Would you like to fight now? Or run again?")
             var fightQuestion = readline.prompt();
@@ -86,6 +138,8 @@ function generateEnemies(x) {
 
 function walkMode() {
     var key = readline.keyIn();
+                console.log("\npress 'w' to walk, or 'q' to quit.\n")
+
     switch (key) {
     case "w":
         console.log("Walking")
@@ -95,7 +149,7 @@ function walkMode() {
             var fightQuestion = readline.prompt();
             fightQuestionTwo = fightQuestion.toLowerCase();
             key = runOrFight(fightQuestionTwo);
-            
+
         }
         break;
     case "q":
@@ -104,17 +158,24 @@ function walkMode() {
     default:
         console.log("What else would you like to do?")
         var menuIndex = readline.keyInSelect(menu, "Select a menu item: ")
-        if (menuIndex === 2) {
+        if (menuIndex ===3) {
+            var print = readline.question("type print in the console: ")
+            if (print === "print") {
+                console.log("Your name is: " + userName + "\nYour health is: " + userHealth + "\nYou inventory contains: " + inventory + ".")
+            } else {
+                console.log("\nPlease type 'print'")
+            }
+        } else if (menuIndex === 2) {
             quit = true;
         } else if (menuIndex === 1) {
             var inventoryIndex = readline.keyInSelect(inventory, "What would you like to use?")
             if (inventory[inventoryIndex] === "Healing Potion") {
-                userHealth = userHealth + 25;
+                userHealth = userHealth + healingPotion;
                 inventory.splice(inventoryIndex, 1)
                 if (userHealth > maxHealth) {
                     userHealth = maxHealth;
                 }
-                console.log("\n\n'Yuck'.. That tastes nasty, but your health increased by 25 HP.")
+                console.log("\n\n'Yuck'.. That tastes nasty, but your health increased by " + healingPotion + " HP. It is now at " + userHealth + ".")
             }
 
         } else if (menuIndex === 0) {
@@ -133,7 +194,7 @@ console.log("\nWELCOME TO BRAN CASTLE, HOME OF COUNT DRACULA\n\nPress enter to b
 
 readline.prompt();
 var userName = readline.question("\nMuahaha.. Good luck, you will need it.\n\nWhat is your name traveler? ")
-console.log("\nGreetings, " + userName + ". You begin your journey with " + userHealth + " HP.\nTry not to die.\n")
+console.log("\nGreetings, " + userName + ". You begin your journey with " + userHealth + " HP.\nPush 'w' to walk. \nTry not to die.\n")
 
 /***************************************************
  ********************CORE***************************/
