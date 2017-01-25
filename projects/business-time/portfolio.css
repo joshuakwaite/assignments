@@ -18,7 +18,6 @@ body {
     list-style: none;
     text-align: center;
     white-space: nowrap;
-    padding-right: 32px;
 }
 
 .nav ul li {
@@ -40,15 +39,6 @@ body {
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
-.first {
-    margin-right: -0.17em;
-    border-right: none !important;
-}
-
-.last {
-    margin-left: -0.17em;
-    border-left: none !important;
-}
 
 
 .box2 {
@@ -58,4 +48,9 @@ body {
 
 .img1 {
     border: 1px solid black;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
 }

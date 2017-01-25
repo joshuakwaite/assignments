@@ -49,3 +49,26 @@ body {
     margin-left: -0.17em;
     border-left: none !important;
 }
+
+.box1 {
+    margin-top: 70px;
+}
+
+.profile {
+    margin: 15px;
+}
+
+.profileimg {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.grey {
+    background-color: #FAFAFA
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Travel Form
+    </title>
+    <link rel="stylesheet" href="high-score-haven.css">
+</head>
+
+<body>
+   <h1>Welcome to Travel Plus!</h1>
+    <form id="form1">
+       Please fill out the form below:
+        <br><br>
+        First Name:
+        <input type="text" name="firstName"> 
+        <br><br>
+        Last Name:
+        <input type="text" name="lastName"><br>
+        <br>Age:
+        <input type="number" name="age">
+        <br>
+        <br>Gender:<br>
+        <input type="radio" name="gender" value="Male" id="male"> <label for="male">Male</label>
+        <br>
+        <input type="radio" name="gender" value="Female" id ="female"> 
+        <label for="female">Female</label>
+        <br><br>
+        <select id="select1">
+        <option name="destination" value=""></option>
+        <option name="destination" value="Canada">Canada</option>
+        <option name="destination" value="Mexico">Mexico</option>
+        <option name="destination" value="Philippines">Philippines</option>
+        </select>
+<br>
+        <br>Dietary Restrictions:<br>
+        <input name="diet" type="checkbox" id="Vegan"> <label for="Vegan">Vegan</label>
+        <br>
+        <input name="diet" type="checkbox" id="MeatEater"> <label for="MeatEater">Meat Eater</label>
+        <br>
+        <input name="diet" type="checkbox" id="peanutAllerg"> <label for="peanutAllergy">Peanut Allergy</label>
+        <br><br>
+        <button type="button" id="button">Submit</button>
+        
+        
+        
+
+    </form>
+<script src="high-score-haven.js"></script>
+</body>
+
+</html>
