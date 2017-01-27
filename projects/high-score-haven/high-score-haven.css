@@ -1,16 +1,7 @@
 body {
-    width: 800px;
-    margin: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
+    background-image: url(footer_lodyas.png);
+    color: white;
 }
-
-form {
-    margin: auto;
-    left: 0;
-    right: 0;
-    width: 300px;
-    border: 1px solid black;
-    padding: 10px;
+table {
+    margin-top: 25px;
 }

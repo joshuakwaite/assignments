@@ -6,15 +6,10 @@ for (var i = 0; i < names.length; i++) {
     }
 
     function attemptCall(name, dontCall, call, text) {
-        var unique = ""
-        for (var o = 0; o < name.length; o++){
-        console.log(name[o])
-        if(name.indexOf(name[o]) <= 0 ) {
-            text(name)
-            continue;
-        }
-        }
-          if (name.length % 2 === 1) {
+        name = name.toLowerCase();
+        if(name.lastIndexOf("a") !== name.indexOf("a") ) {
+            text(name);
+        } else if  (name.length % 2 === 1) {
             dontCall(name)
         } else if 
             (name.length % 2 === 0) {

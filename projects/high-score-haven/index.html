@@ -4,51 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        Travel Form
-    </title>
+        High Scores </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="high-score-haven.css">
 </head>
 
 <body>
-   <h1>Welcome to Travel Plus!</h1>
-    <form id="form1">
-       Please fill out the form below:
-        <br><br>
-        First Name:
-        <input type="text" name="firstName"> 
-        <br><br>
-        Last Name:
-        <input type="text" name="lastName"><br>
-        <br>Age:
-        <input type="number" name="age">
-        <br>
-        <br>Gender:<br>
-        <input type="radio" name="gender" value="Male" id="male"> <label for="male">Male</label>
-        <br>
-        <input type="radio" name="gender" value="Female" id ="female"> 
-        <label for="female">Female</label>
-        <br><br>
-        <select id="select1">
-        <option name="destination" value=""></option>
-        <option name="destination" value="Canada">Canada</option>
-        <option name="destination" value="Mexico">Mexico</option>
-        <option name="destination" value="Philippines">Philippines</option>
-        </select>
-<br>
-        <br>Dietary Restrictions:<br>
-        <input name="diet" type="checkbox" id="Vegan"> <label for="Vegan">Vegan</label>
-        <br>
-        <input name="diet" type="checkbox" id="MeatEater"> <label for="MeatEater">Meat Eater</label>
-        <br>
-        <input name="diet" type="checkbox" id="peanutAllerg"> <label for="peanutAllergy">Peanut Allergy</label>
-        <br><br>
-        <button type="button" id="button">Submit</button>
-        
-        
-        
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <h1>High Score </h1>
+                <form id="form1">
+                    Enter your high score here:
+                    <br><br>
+                        <label for="name">Name:</label>
+                    <input type="text" required name="name" class="form-control">
+                    <br> <label for="game">Game:</label>
+                    <input type="text" name="game" class="form-control">
+                    <br><label for="date">Date:</label>
+                    <input type="date" name="date" class="form-control">
+                    <br><label for="highScore">High Score:</label>
+                    <input type="text" name="highScore" class="form-control">
+                    <br>
+                    <br><label for="message">Add a Message?</label>
+                    <br>
+                    <input type="radio" name="message" value="yes" id="yes">
+                    <label for="yes">Yes</label>
+                    <br>
+                    <input type="radio" name="message" value="no" id="no">
+                    <label for="no">No</label>
+                    <br>
+                    <br>
+                    <button type="button" id="button" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div class="col-xs-8 col-xs-offset-1">
+                <table class="table table-responsive">
+                   <tbody id="tbody">
+                    <tr>
+                       <th>Name:</th>
+                       <th>Game:</th>
+                       <th>Date:</th>
+                       <th>High Score:</th>
+                       <th>Trash Talk Message:</th>
+                    </tr>
+                    </tbody>
+                </table>
 
-    </form>
-<script src="high-score-haven.js"></script>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="high-score-haven.js"></script>
 </body>
 
 </html>

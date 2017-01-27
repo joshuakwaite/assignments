@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mario Pest Control</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  
+   <div id="btnbg1">
+        <input type="button" id="button1" class="btn btn-default" value="Toggle Night Mode">
+    </div>
+    <header>
+        <h1>
+       <font color="#fed330">M</font><font color="#ec3b2e">a</font><font color="#40b34f">r</font><font color="#1daee4">i</font><font color="#fed330">o</font><font color="#40b34f">'</font><font color="#1daee4">s</font> 
+        </h1>
+        <h1>
+        <font color="#fed330">P</font><font color="#ec3b2e">e</font><font color="#40b34f">s</font><font color="#1daee4">t </font><font color="#fed330">C</font><font color="#40b34f">o</font><font color="#1daee4">n</font><font color="#40b34f">t</font><font color="#ec3b2e">r</font><font color="#1daee4">o</font><font color="#fed330">l</font></h1>
+    </header>
+    <main>
+        <div id="section1">
+            <h2>Goomba</h2>
+            <img src="Goomba.png">
+            <section>
+                <p>Goombas are worth:
+                    <div class="coinNumber">5</div>coins each!</p>
+                <p>How many did you catch?</p>
+            </section>
+            <input type="text" id="goombaInput" class="textBox" value="0">
+            <br>
+            Subtotal: <div id="subtotalOne">0</div>
+        </div><!--
+  --><div id="section2">
+            <h2>Bob-omb</h2>
+            <img src="Bob-omb.png">
+            <section>
+                <p>Bob-ombs are worth:
+                    <div class="coinNumber">7</div>coins each!</p>
+                <p>How many did you catch?</p>
+            </section>
+            <input type="text" id="bobombInput" class="textBox" value="0">
+            <br>
+            Subtotal: <div id="subtotalTwo">0</div>
+        </div><!--
+  --><div id="section3">
+            <h2>Cheep-cheep</h2>
+            <img src="cheep-cheep.png">
+            <section>
+                <p>Cheep-cheeps are worth:
+                    <div class="coinNumber">11</div>coins each!</p>
+                <p>How many did you catch?</p>
+            </section>
+            <input type="text" id="cheepcheepInput" class="textBox" value="0">
+            <br>
+            Subtotal: <div id="subtotalThree">0</div>
+        </div>
+    </main>
+    <article>
+        <div class="earnedText"> Total coins:</div>
+
+        <div id="output">0
+        </div>
+
+
+    </article>
+    <div id="buttonBackground">
+        <input type="button" id="button" class="btn btn-default" value="Submit">
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <footer>
+        mario@mpc.com / mariospestcontrol.com / 1234 Plumber's Lane, Provo, Utah 84606 </footer>
+</body>
+
+</html>
