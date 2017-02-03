@@ -1,0 +1,50 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+a .trash{
+    right: 25px;
+    position: absolute;
+}
+
+a .pencil{
+    right: 55px;
+    position: absolute;
+}
+
+a .picture{
+    right: 85px;
+    position: absolute;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+/*
+.items {
+    border: 1px solid green;
+    margin-bottom: 25px;
+    border-radius: 25px;
+}
+*/
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.checkbox {
+    position: absolute;
+    left: 41px;
+    top: 40px;
+    -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+}
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ng-model</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body ng-controller="MainController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 text-center">
+                <br>
+                <h2> {{one}}</h2>
+                <br>
+                <input type="text" value="type here" ng-model="one">
+            </div>
+
+            <div class="col-md-4 col-xs-12 text-center">
+                <br>
+                <h2>{{two}}</h2>
+                <br>
+                <input type="text" ng-model="two" value="type here">
+
+            </div>
+
+
+            <div class="col-md-4 col-xs-12 text-center">
+                <br>
+                <h2>{{three}}</h2>
+                <br>
+                <input type="text" value="type here" ng-model="three">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

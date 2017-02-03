@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="sheet.css">
+</head>
+
+<body ng-controller="mainController">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3" style="border: 1px solid lightgrey;">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1>Josh's Todo List</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <form ng-submit="addTodo()">
+                            <input type="text" class="form-control" placeholder="Add a todo here" ng-model="newTodo.title">
+                            <br>
+                            <textarea class="form-control" rows="5" placeholder="Add a description here" ng-model="newTodo.description"></textarea>
+                            <br>
+
+                            <button type="button" class="btn btn-default" ng-click="addTodo()">Submit</button>
+                            <br>
+                            <br>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" ng-repeat="x in todoList track by $index">
+                        <div class="items well">
+                            <ul>
+                                <li>
+                                    <h3><input type="checkbox" ng-model="item.done" id="{{x.title}}" class="checkbox"><label for="{{x.title}}" class="done-{{item.done}}"> {{x.title}} </label><a ng-click="deleteTodo(x, $index)"><i class="fa fa-picture-o picture clickable" aria-hidden="true"> </i></a><a ng-click="editTodo($index)"><i class="fa fa-pencil pencil clickable" aria-hidden="true"> </i></a><a ng-click="deleteTodo(x, $index)"><i class="fa fa-trash-o trash clickable" aria-hidden="true"> </i></a></h3>
+
+                                    <ul>
+                                        <li>
+                                            <label for="{{x.title}}" class="done-{{item.done}}">{{x.description}}</label>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

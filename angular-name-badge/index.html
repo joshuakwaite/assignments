@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Name Badge</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body ng-controller="mainController">
+   <br>
+    <div class="container-fluid well">
+        <div class="row form-group">
+            <div class="col-xs-4 col-xs-offset-2">
+                <input type="text" placeholder="First Name" class="form-control" ng-model="newPerson.firstName">
+            </div>
+            <div class="col-xs-4">
+                <input type="text" placeholder="Last Name" class="form-control" ng-model="newPerson.lastName">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-4 col-xs-offset-2">
+                <input type="email" placeholder="E-mail" class="form-control" ng-model="newPerson.email">
+            </div>
+            <div class="col-xs-4">
+                <input type="text" placeholder="Birth Place" class="form-control" ng-model="newPerson.birthPlace">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-4 col-xs-offset-2">
+                <input type="text" placeholder="Phone Number" class="form-control" ng-model="newPerson.phoneNumber">
+            </div>
+            <div class="col-xs-4">
+                <input type="text" placeholder="Favorite Food" class="form-control"ng-model="newPerson.favoriteFood">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-8 col-xs-offset-2">
+                <textarea class="form-control" rows="6" placeholder="Comments" ng-model="newPerson.comments"></textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-8 col-xs-offset-2 text-center">
+                <button ng-click="addPerson()" class="btn btn-default" type="submit">Submit</button>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <!-----------------------------------------------badge---------------------------------------------------------------->
+    
+    <div class="container-fluid well" ng-repeat="pers in person">
+        <div class="row form-group">
+            <div class="col-xs-4 col-xs-offset-2">
+            Name: {{pers.firstName}} {{pers.lastName}}
+            </div>
+            <div class="col-xs-4">
+            Email: {{pers.email}}
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-4 col-xs-offset-2">
+            Birth Place: {{pers.birthPlace}}
+                        </div>
+            <div class="col-xs-4">
+            Phone Number: {{pers.phoneNumber}}
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-4 col-xs-offset-2">
+            Favorite Food: {{pers.favoriteFood}}
+            </div>
+            <div class="col-xs-4">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-8 col-xs-offset-2" style="border: 1px solid black; height: 100px;">
+            {{pers.comments}}
+                        </div>
+        </div>
+      
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
