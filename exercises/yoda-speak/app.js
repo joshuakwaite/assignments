@@ -10,6 +10,7 @@ angular.module("myApp",[])
     };
     
     $scope.buttonClicked = function () {
+        $scope.output = "Loading..."
     $http.get("https://yoda.p.mashape.com/yoda?sentence=" + $scope.inputSentence, config).then(function(response){
         $scope.output = response.data
     })
