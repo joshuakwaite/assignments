@@ -24,6 +24,9 @@
                         <form ng-submit="addTodo()">
                             <input type="text" class="form-control" placeholder="Add a todo here" ng-model="newTodo.title">
                             <br>
+                            <input type="number" class="form-control" placeholder="Add a price here" ng-model="newTodo.price">
+
+                            <br>
                             <textarea class="form-control" rows="5" placeholder="Add a description here" ng-model="newTodo.description"></textarea>
                             <br>
 
@@ -38,11 +41,34 @@
                         <div class="items well">
                             <ul>
                                 <li>
-                                    <h3><input type="checkbox" ng-model="item.done" id="{{x.title}}" class="checkbox"><label for="{{x.title}}" class="done-{{item.done}}"> {{x.title}} </label><a ng-click="deleteTodo(x, $index)"><i class="fa fa-picture-o picture clickable" aria-hidden="true"> </i></a><a ng-click="editTodo($index)"><i class="fa fa-pencil pencil clickable" aria-hidden="true"> </i></a><a ng-click="deleteTodo(x, $index)"><i class="fa fa-trash-o trash clickable" aria-hidden="true"> </i></a></h3>
+                                    <h3>
+                                        <input type="checkbox" ng-model="x.completed" id="{{x.title}}" class="checkbox" ng-click="clickCompleted(x, $index)">
+                                        <label for="{{x.title}}" ng-class="{'done': x.completed}"> {{x.title}} </label>
+                                        
+                                        <a ng-click="x.isToggle = !x.isToggle">
+                                            <i class="fa fa-picture-o picture clickable" aria-hidden="true"> </i>
+                                        </a>
+                                        
+                                        <a ng-click="editTodo(x, $index)">
+                                            <i class="fa fa-pencil pencil clickable" aria-hidden="true"> </i>
+                                        </a>
+                                        
+                                        <a ng-click="deleteTodo(x, $index)">
+                                            <i class="fa fa-trash-o trash clickable" aria-hidden="true"> </i>
+                                        </a>
+                                    </h3>
 
                                     <ul>
                                         <li>
-                                            <label for="{{x.title}}" class="done-{{item.done}}">{{x.description}}</label>
+                                            <label for="{{x.title}}" ng-class="{'done': x.completed}">${{x.price}}</label>
+                                        </li>
+                                        <li>
+                                            <label for="{{x.title}}" ng-class="{'done': x.completed}">{{x.description}}</label>
+                                        </li>
+                                        <li>
+                                            <input type="text" ng-show="x.isToggle" placeholder="insert URL here" ng-model="picture">
+                                            <button ng-show="x.isToggle" ng-click="pictureClicked(x, picture)">insert</button>
+                                            <img ng-src="{{x.picture}}">
                                         </li>
                                     </ul>
                                 </li>
@@ -50,12 +76,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
     <script src="app.js"></script>
 </body>

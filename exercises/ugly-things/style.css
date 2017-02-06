@@ -1,0 +1,14 @@
+.blueBG {
+background-color: skyblue;
+    padding-top: 50px;
+}
+
+.btn {
+    margin-bottom: 50px;
+    
+}
+
+img {
+    max-width: 100%;
+    overflow: hidden;
+}

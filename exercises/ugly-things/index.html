@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ugly Things</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+
+<body ng-controller="mainController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="row blueBG">
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" placeholder="Title" ng-model="thing.title">
+                    </div>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" placeholder="Image URL" ng-model="thing.url">
+                    </div>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" placeholder="Description" ng-model="thing.description">
+                    </div>
+                </div>
+                <div class="row blueBG">
+                    <div class="col-xs-12 text-center">
+                        <button type="button" class="btn btn-default" ng-click="clicked()">Submit</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row" ng-repeat="item in uglyThing">
+                    <div class="xs-col-12 center-block text-center">
+                        <h2>{{item.title}}</h2> <br>
+                        <p>{{item.description}}</p> <br>
+                        <img ng-src="{{item.url}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
