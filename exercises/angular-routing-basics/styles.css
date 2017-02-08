@@ -1,0 +1,30 @@
+li {
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+
+.love img {
+    width: 100%;
+    height: 200px;
+}
+
+.spacing-top {
+    margin-top: 50px;
+}
+
+.footer {
+    height: 50px;
+}

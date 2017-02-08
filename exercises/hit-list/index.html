@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
+
 <body ng-controller="myController" style="margin-left:15%; margin-right:15%; background-color:lightblue;">
     <div class="container-fluid">
-       <div class="row">
-           <div class="col-xs-12 text-center well">
-               <h1>Josh's Hitlist</h1>
-           </div>
-       </div>
         <div class="row">
-            <div class="col-xs-4 well text-center" style="padding-top: 25px;"ng-repeat="something in hitlist"><img class="img-responsive" style="height:200px; width:250px;" ng-src="{{ something.image }}">{{something.name}}</div>
-            
-            
+            <div class="col-xs-12 text-center well">
+                <h1>Josh's Hitlist</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 well text-center" style="padding-top: 25px;" ng-repeat="something in hitlist"><img class="img-responsive" style="height:200px; width:250px;" ng-src="{{ something.image }}">{{something.name}}</div>
+
+
         </div>
     </div>
-    
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
     <script src="app.js"></script>
+    <script src="services/httpservice.js"></script>
 </body>
+
 </html>

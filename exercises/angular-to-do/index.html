@@ -30,7 +30,7 @@
                             <textarea class="form-control" rows="5" placeholder="Add a description here" ng-model="newTodo.description"></textarea>
                             <br>
 
-                            <button type="button" class="btn btn-default" ng-click="addTodo()">Submit</button>
+                            <button type="button" class="btn btn-default" ng-click="addTodo(newTodo)">Submit</button>
                             <br>
                             <br>
                         </form>
@@ -49,7 +49,7 @@
                                             <i class="fa fa-picture-o picture clickable" aria-hidden="true"> </i>
                                         </a>
                                         
-                                        <a ng-click="editTodo(x, $index)">
+                                        <a ng-click="editTodo(x, $index, newTodo)">
                                             <i class="fa fa-pencil pencil clickable" aria-hidden="true"> </i>
                                         </a>
                                         
@@ -83,6 +83,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
     <script src="app.js"></script>
+    <script src="services/httpservices.js"></script>
 </body>
 
 </html>

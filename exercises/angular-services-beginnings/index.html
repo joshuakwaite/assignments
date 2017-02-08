@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <title>services</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body ng-controller="mainController" style="width: 95%; margin: auto; text-align:center;">
+
+<h1>Pokelist</h1>
+ <br>
+ <input class="form-field" style="width: 200px;" placeholder="Favorite Pokemon Here" ng-model="pokeInput">
+ <br>
+ <br>
+ <button class="btn btn-primary" ng-click="addPokemon(pokeInput)">Add Pokemon</button>
+ <br> 
+ <br>
+ <div ng-repeat="pokemon in output track by $index">{{pokemon}}</div>
+ <br>
+ <br>
+ <br>
+ <input class="form-field" style="width: 200px;" placeholder="Delete" ng-model="pokeDelete">
+ <br>
+ <br>
+ <button class="btn btn-primary" ng-click="deletePokemon(pokeDelete)">Delete Pokemon</button>
+  
+   
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="services/pokeservice.js"></script>
+</body>
+
+</html>

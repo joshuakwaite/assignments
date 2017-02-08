@@ -1,41 +1,35 @@
 var app = angular.module("myApp", []);
 
-app.controller("mainController", ["$scope", "$http", function ($scope, $http) {
+app.controller("mainController", ["$scope", "$http", "httpService", function ($scope, $http, httpService) {
 
-//    $scope.isToggle = false;
     
-    $http.get("http://api.vschool.io/joshuawaite/todo").then(function (response) {
+    httpService.getApi().then(function (response) {
         $scope.todoList = response.data
     });
 
 
     $scope.pictureClicked = function (x, picture) {
        x.picture = picture;
-        
-        
         x.isToggle = false;
-//        $scope.picturePerfect.push($scope.picture)
-        
     }
     
 
     $scope.clickCompleted = function(singleTodo, index) {
-        $http.put("http://api.vschool.io/joshuawaite/todo/" + singleTodo._id, singleTodo).then(function(response) {
-            console.log(response)
+        httpService.completed(singleTodo, index).then(function(response) {
         })
     }
 
     
     
-    $scope.editTodo = function (singleTodo, index) {
-        $http.put("http://api.vschool.io/joshuawaite/todo/" + singleTodo._id, $scope.newTodo).then(function (response) {
-            console.log(response)
+    $scope.editTodo = function (singleTodo, index, whatToPut) {
+        httpService.edit(singleTodo, index, whatToPut).then(function (response) {
             $scope.todoList.splice(index, 1, response.data)
         })
     }
 
-    $scope.addTodo = function () {
-        $http.post("http://api.vschool.io/joshuawaite/todo", $scope.newTodo).then(function (response) {
+    $scope.addTodo = function (whatToPost) {
+        httpService.add(whatToPost).then(function (response) {
+            console.log(response)
             $scope.todoList.push(response.data)
             $scope.newTodo = {}
         })
@@ -44,7 +38,7 @@ app.controller("mainController", ["$scope", "$http", function ($scope, $http) {
 
     $scope.deleteTodo = function (singleTodo, index) {
 
-        $http.delete("http://api.vschool.io/joshuawaite/todo/" + singleTodo._id).then(function (response) {
+       httpService.delete(singleTodo, index).then(function (response) {
             $scope.todoList.splice(index, 1)
             console.log("Your todo was deleted!")
         }, function (response) {
