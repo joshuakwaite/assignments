@@ -1,6 +1,6 @@
-var app = angular.module("myApp", []);
+var app = angular.module("myApp", ["angular-skycons"]);
 
-app.controller("mainController", ["$scope", "httpService",  function ($scope, httpService) {
+app.controller("mainController", ["$scope", "httpService", function ($scope, httpService) {
 
 
     $scope.lookupLocation = function (location) {
@@ -16,35 +16,21 @@ app.controller("mainController", ["$scope", "httpService",  function ($scope, ht
 
 
                 $scope.output = weather.currently
+                $scope.output.color = {
+                    red: "red",
+                    blue: "blue",
+                    white: "white",
+                }
                 $scope.currentTime = weather.currently.time * 1000;
                 $scope.hourly = weather.hourly.data
                 $scope.forecast = weather.daily
 
                 $scope.quantity = 6
-                
+
                 console.log(weather.currently.icon)
             })
         })
     }
-    
-
-  var icons = new Skycons({"color": "red"});
-
-icons.set("clear-day", Skycons.CLEAR_DAY);
-icons.set("clear-night", Skycons.CLEAR_NIGHT);
-icons.set("partly-cloudy-day", Skycons.PARTLY_CLOUDY_DAY);
-icons.set("partly-cloudy-night", Skycons.PARTLY_CLOUDY_NIGHT);
-icons.set("cloudy", Skycons.CLOUDY);
-icons.set("rain", Skycons.RAIN);
-icons.set("sleet", Skycons.SLEET);
-icons.set("snow", Skycons.SNOW);
-icons.set("wind", Skycons.WIND);
-icons.set("fog", Skycons.FOG);
-
-icons.play();
-
-
-
 }])
 
 //.config(["$routeProvider", function ($routeProvider) {

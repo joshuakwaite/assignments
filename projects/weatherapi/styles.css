@@ -32,7 +32,7 @@ body {
 }
 
 .nav {
-    position:fixed;
+/*    position:fixed;*/
     top: 0;
     left: 0;
     width: 100%;
@@ -43,30 +43,4 @@ body {
     padding-top: 15px;
     margin-bottom: 15px;
     padding-bottom: 0px;
-}
-
-.nav ul {
-    list-style: none;
-    text-align: center;
-    white-space: nowrap;
-    padding-right: 32px;
-}
-
-.nav ul li {
-    display: inline-block;
-}
-
-.nav ul li a {
-    font-family: soleil, sans-serif;
-    font-weight: 100;
-    font-size: 25px;
-    color: black;
-    padding: 19px 16px;
-    transition: background 0.4s, text-shadow 0.4s;
-    cursor: pointer;
-}
-
-.nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }

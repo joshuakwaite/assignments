@@ -13,20 +13,20 @@
 <body ng-controller="mainController">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-xs-12 nav">
+                <div class="col-xs-5 col-xs-offset-1">
+                    <input type="text" ng-model="locationLookup" style="color:black; width: 200px; display: inline-block;" placeholder="Enter Zip or Address" class="form-control">
+                    <button ng-click="lookupLocation(locationLookup)" class="btn btn-primary" style="margin-bottom: 4px;">Submit</button>
+                </div>
+                <div class="col-xs-4 text-right" style="font-size:2em;">
+                    About
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-10 col-xs-offset-1 border">
                 <div class="row">
-                    <div class="col-xs-12 nav">
-                        <div class="col-xs-5 col-xs-offset-1">
-                            <input type="text" ng-model="locationLookup" style="color:black; width: 200px; display: inline-block;" placeholder="Enter Zip or Address" class="form-control">
-                            <button ng-click="lookupLocation(locationLookup)" class="btn btn-primary" style="margin-bottom: 4px;">Submit</button>
-                        </div>
-                        <div class="col-xs-4 text-right" style="font-size:2em;">
-                            About
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 text-center" style="margin-top: 45px;">
+                    <div class="col-xs-12 text-center">
                         <h1> {{currentTime | date: 'longDate' }}</h1>
                     </div>
                 </div>
@@ -36,12 +36,9 @@
                         <p>{{output.summary}}</p>
                         <p>Temperature: {{output.temperature}}ºF</p>
                         <p>Chance of rain: {{output.precipProbability*100}}%</p>
-                        <p>{{output.icon}}</p>
-                        <p><canvas ng-attr-id="{{output.icon}}" width="64" height="64"></canvas></p>
-                        <p><canvas id="partly-cloudy-day" width="64" height="64"></canvas></p>
                     </div>
                     <div class="col-xs-2 mainSummary text-center">
-                        <img src="images/snowy.png" class="img-responsive main" style="display: inline-block">
+                        <skycon icon="output.icon" color="output.color.white" class="main"></skycon>
                     </div>
                 </div>
                 <div class="row text-center">
@@ -49,6 +46,8 @@
                     <div class="col-xs-2 text-center hourlySummary" ng-repeat="each in hourly | limitTo:quantity">
                         <h4 style="border-bottom: 1px solid white;">{{each.time*1000 | date: 'h:mm:a'}}</h4>
                         <p>{{each.summary}}
+                            <br>
+                            <skycon icon="each.icon" color="output.color.white"></skycon>
                             <br>{{each.temperature}}ºF
                             <br> Chance of rain: {{each.precipProbability*100}}%</p>
 
@@ -61,7 +60,10 @@
                         <h4> {{forecast.summary}} </h4>
                         <div class="row">
                             <div class="col-xs-2 text-center" ng-repeat="daily in forecast.data | limitTo:quantity+1" ng-if="$index > 0" style="margin-bottom: 50px;">
-                                <h4>{{ daily.time*1000 | date: 'EEEE' }}</h4> High / Low
+                                <h4>{{ daily.time*1000 | date: 'EEEE' }}</h4>
+                                <skycon icon="daily.icon" color="output.color.white"></skycon>
+
+                                <br> High / Low
                                 <br> {{daily.temperatureMax}}ºF / {{daily.temperatureMin}}ºF
                                 <br> Chance of Rain: {{daily.precipProbability*100}}%
                             </div>
@@ -74,7 +76,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-    <script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+    <script src="bower_components/angular-skycons/angular-skycons.min.js"></script>
     <script src="app.js"></script>
     <script src="services/httpservice.js"></script>
 </body>
