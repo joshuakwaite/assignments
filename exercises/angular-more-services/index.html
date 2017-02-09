@@ -13,33 +13,35 @@
             <div class="col-xs-8 col-xs-offset-2">
                 <div class="row" style="padding-top: 50px; padding-bottom: 50px; background-color: lightblue;">
                     <div class="col-xs-4">
-                        <input type="text" placeholder="Title" ng-model="title" class="form-control">
+                        <input type="text" placeholder="Title" ng-model="userInput.title" class="form-control">
                     </div>
                     <div class="col-xs-4">
-                        <input type="text" placeholder="Description" ng-model="description" class="form-control">
+                        <input type="text" placeholder="Description" ng-model="userInput.description" class="form-control">
                     </div>
                     <div class="col-xs-4">
-                        <input type="text" placeholder="Image URL" ng-model="image" class="form-control">
+                        <input type="text" placeholder="Image URL" ng-model="userInput.image" class="form-control">
                     </div>
                     <div class="col-xs-12 text-center" style="padding-top: 25px;">
-                        <button class="btn btn-primary" ng-click="submitClicked">Submit</button>
+                        <button class="btn btn-primary" ng-click="submitClicked(userInput)">Submit</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 center-block text-center" ng-repeat="x in test track by $index">
+                        <h2>{{x.title}}</h2>
+                        <img ng-src="{{x.image}}" class="img-responsive center-block" style="width:200px; height: 300px;">
+                        <p>{{x.description}}</p>{{x.$index}}
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 center-block text-center" ng-repeat="">
-                    <h2>{{name}}</h2>
-                    <img src="{{image}}" class="img-responsive" style="width:200px; height: 300px;">
-                    <p>{{description}}</p>
-                </div>
-            </div>
+
         </div>
     </div>
     </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
     <script src="app.js"></script>
+    <script src="services/addservice.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,12 @@
 angular.module("myApp", [])
 
-.controller("mainController", ["$scope", function($scope) {
+.controller("mainController", ["$scope", "addService", function($scope, addService) {
     
-    $scope.submitClicked = function() {
-        
+    
+    
+    $scope.submitClicked = function(something) {
+        $scope.test = addService.addIt(something)
+        $scope.userInput = {};
     }
     
 }])
