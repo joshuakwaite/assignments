@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1 border">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1> {{output.time*1000 | date: 'longDate' }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-3 mainSummary text-center">
+                <h2>{{output.time*1000 | date: 'EEEE'}}:</h2>
+                <p>{{output.summary}}</p>
+                <p ng-show="output.temperature">Temperature: {{output.temperature}}ºF</p>
+                <p ng-show="output.temperatureMax">High Temperature: {{output.temperatureMax}}ºF</p>
+                <p ng-show="output.temperatureMin">Low Temperature: {{output.temperatureMin}}ºF</p>
+                <p>Chance of rain: {{output.precipProbability*100 | number : 0}}%</p>
+            </div>
+            <div class="col-xs-2 mainSummary text-center">
+                <skycon icon="output.icon" color="output.color.white" class="main"></skycon>
+            </div>
+        </div>
+        <div class="row text-center">
+            <h3>Hourly:</h3>
+            <div class="col-xs-2 text-center hourlySummary" ng-repeat="each in hourly | limitTo:quantity">
+                <h4 style="border-bottom: 1px solid white;">{{each.time*1000 | date: 'h:mm:a'}}</h4>
+                <p>{{each.summary}}
+                    <br>
+                    <skycon icon="each.icon" color="output.color.white"></skycon>
+                    <br>{{each.temperature}}ºF
+                    <br> Chance of rain: {{each.precipProbability*100 | number : 0}}%</p>
+
+
+            </div>
+        </div>
