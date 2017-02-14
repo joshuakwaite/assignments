@@ -5,12 +5,13 @@ var app = angular.module("myApp", ["angular-skycons", "ngRoute"]);
 app.config(["$routeProvider", function ($routeProvider) {
 
     $routeProvider
-        .when("/:day/:areacode", {
+        .when("/:areacode/:day", {
             templateUrl: "components/day-view/day-view.html",
             controller: "mainController"
+        
         })
         .otherwise({
-            redirectTo: "/Today/84606"
+            redirectTo: "/Home"
         });
     
         

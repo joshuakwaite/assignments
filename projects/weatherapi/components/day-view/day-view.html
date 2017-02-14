@@ -1,33 +1,52 @@
-<div class="row">
+<div class="row" ng-hide="currentLocation === undefined">
     <div class="col-xs-10 col-xs-offset-1 border">
         <div class="row">
             <div class="col-xs-12 text-center">
-                <h1> {{output.time*1000 | date: 'longDate' }}</h1>
+                <h1>{{locationOutput}}</h1>
+                <h3>{{output.time*1000 | date: 'longDate' }}</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-3 col-xs-offset-3 mainSummary text-center">
-                <h2>{{output.time*1000 | date: 'EEEE'}}:</h2>
+                <br>
                 <p>{{output.summary}}</p>
                 <p ng-show="output.temperature">Temperature: {{output.temperature}}ºF</p>
                 <p ng-show="output.temperatureMax">High Temperature: {{output.temperatureMax}}ºF</p>
                 <p ng-show="output.temperatureMin">Low Temperature: {{output.temperatureMin}}ºF</p>
                 <p>Chance of rain: {{output.precipProbability*100 | number : 0}}%</p>
             </div>
-            <div class="col-xs-2 mainSummary text-center">
-                <skycon icon="output.icon" color="output.color.white" class="main"></skycon>
+            <div class="col-xs-2">
+                <skycon icon="output.icon" class="mainIcon"></skycon>
+
             </div>
         </div>
-        <div class="row text-center">
+        <div class="row text-center" ng-show="showHourly === true">
             <h3>Hourly:</h3>
             <div class="col-xs-2 text-center hourlySummary" ng-repeat="each in hourly | limitTo:quantity">
                 <h4 style="border-bottom: 1px solid white;">{{each.time*1000 | date: 'h:mm:a'}}</h4>
                 <p>{{each.summary}}
                     <br>
-                    <skycon icon="each.icon" color="output.color.white"></skycon>
+                    <skycon icon="each.icon"></skycon>
                     <br>{{each.temperature}}ºF
                     <br> Chance of rain: {{each.precipProbability*100 | number : 0}}%</p>
 
 
             </div>
         </div>
+        <div class="row" ng-controller="mainController">
+            <div class="col-xs-12 text-center">
+                <h2>Forecast:</h2>
+                <h4> {{forecast.summary}} </h4>
+                <div class="row">
+                    <div class="col-xs-2 text-center" ng-repeat="daily in forecast.data | limitTo:6" style="margin-bottom: 50px;">
+                        <a href="#!/{{ currentLocation }}/{{daily.time*1000 | date: 'EEEE'}}"><h4>{{ daily.time*1000 | date: 'EEEE' }}</h4></a>
+                        <skycon icon="daily.icon"></skycon>
+                        <br> High / Low
+                        <br> {{daily.temperatureMax}}ºF / {{daily.temperatureMin}}ºF
+                        <br> Chance of Rain: {{daily.precipProbability*100 | number : 0}}%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

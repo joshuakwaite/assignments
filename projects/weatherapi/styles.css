@@ -9,9 +9,9 @@ body {
     font-family: bariolReg;
 }
 
-.main {
-    width: 115px;
-    padding-top: 40px;
+.mainIcon {
+    width: 120px;
+    margin-top: 25px;
 }
 
 .spacing {
@@ -43,4 +43,12 @@ body {
     padding-top: 15px;
     margin-bottom: 15px;
     padding-bottom: 0px;
+}
+
+a {
+    color: limegreen;
+}
+
+a :hover {
+    color: hotpink;
 }

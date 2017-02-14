@@ -7,50 +7,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+    <script src="bower_components/skycons/skycons.js"></script>
+    <script src="bower_components/angular-skycons/angular-skycons.js"></script>
+    <script src="app.js"></script>
+    <script src="services/httpservice.js"></script>
+    <script src="components/day-view/day-view.js"></script>
+    
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" ng-controller="mainController">
         <div class="row">
             <div class="col-xs-12 nav">
                 <div class="col-xs-5 col-xs-offset-1">
                     <input type="text" ng-model="locationLookup" style="color:black; width: 200px; display: inline-block;" placeholder="Enter Zip or Address" class="form-control">
-<!--                    <button ng-click="lookupLocation(locationLookup)" class="btn btn-primary" style="margin-bottom: 4px;">Submit</button>-->
-               <a href="#!/Today/{{ locationLookup }}"><button class="btn btn-primary" style="margin-bottom: 4px;">Submit</button></a>
+                    <a href="#!/{{ currentLocation }}/{{currentDay}}">
+                        <button class="btn btn-primary" style="margin-bottom: 4px;" ng-click="markLocation(locationLookup)">Submit</button>
+                    </a>
                 </div>
                 <div class="col-xs-4 text-right" style="font-size:2em;">
                     About
                 </div>
             </div>
         </div>
-        <ng-view></ng-view>
-        <div class="row" ng-controller="mainController">
-            <div class="col-xs-12 text-center">
-                <h2>Forecast:</h2>
-                <h4> {{forecast.summary}} </h4>
-                <div class="row">
-                    <div class="col-xs-2 text-center" ng-repeat="daily in forecast.data | limitTo:quantity+1" ng-if="$index > 0" style="margin-bottom: 50px;">
-                        <a href="#!/{{daily.time*1000 | date: 'EEEE'}}/{{locationLookup}}"><h4>{{ daily.time*1000 | date: 'EEEE' }}</h4></a>
-                        <skycon icon="daily.icon" color="output.color.white"></skycon>
-                        <br> High / Low
-                        <br> {{daily.temperatureMax}}ºF / {{daily.temperatureMin}}ºF
-                        <br> Chance of Rain: {{daily.precipProbability*100 | number : 0}}%
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+        <div ng-view></div>
+
     </div>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
-    <script src="bower_components/angular-skycons/angular-skycons.min.js"></script>
-    <script src="app.js"></script>
-    <script src="services/httpservice.js"></script>
-    <script src="components/day-view/day-view.js"></script>
 </body>
 
 </html>
