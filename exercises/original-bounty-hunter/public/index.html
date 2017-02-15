@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>First Server</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1>Bounty Hunter's Bounties</h1>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <input type="text" class="form-control" placeholder="First Name" ng-model="newBounty.firstname">
+                        <input type="text" class="form-control" placeholder="Last Name" ng-model="newBounty.lastname">
+                        <input type="number" class="form-control" placeholder="Bounty" ng-model="newBounty.bountyAmount">
+                        <input type="text" class="form-control" placeholder="Type" ng-model="newBounty.type">
+                        <br>
+
+                        <div class="text-center block-center">
+                            <input type="radio" name="living" ng-value=true style="text-align: left;" ng-model="newBounty.living"> Alive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <input type="radio" name="living" ng-value=false style="text-align: left;" ng-model="newBounty.living"> Dead</div>
+                        <br>
+                       <div class="text-center block-center">
+                             <button type="button" class="btn btn-primary" ng-click="newPost(newBounty)">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 text-left" ng-repeat="bounty in output track by $index">
+                        <div ng-show="bounty.edit">
+                            <input type="text" class="form-control" ng-model="bounty.firstname">
+                            <input type="text" class="form-control" ng-model="bounty.lastname">
+                            <input type="number" class="form-control" ng-model="bounty.bountyAmount">
+                            <input type="text" class="form-control" ng-model="bounty.type">
+                            <br>
+                            <input type="radio" name="living" ng-value=true style="text-align: left;" ng-model="bounty.living"> Alive
+                            <br>
+                            <input type="radio" name="living" ng-value=false style="text-align: left;" ng-model="bounty.living"> Dead
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-primary" ng-click="newPut(bounty , $index)">Submit</button>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div ng-hide="bounty.edit" ng-class="{'dead': !bounty.living}">
+                            First Name: {{bounty.firstname}}
+                            <br> Last Name: {{bounty.lastname}}
+                            <br> Bounty Amount: {{bounty.bountyAmount | currency : USD : 0}}
+                            <br> Type: {{bounty.type}}
+                            <br> Alive?: {{bounty.living}}
+                            <br>
+                            <br>
+                        </div>
+                        <button type="button" ng-click="bounty.edit = !bounty.edit">Edit</button>
+                        <button type="button" ng-click="deleteApi(bounty)">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 text-center noPadding">
+                <div class="footer">Created by Josh Waite</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="services/httpService.js"></script>
+</body>
+
+</html>

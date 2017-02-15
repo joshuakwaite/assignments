@@ -1,0 +1,1 @@
+This angular exercise was an introduction to express and server creation. To run this app, you can run server.js in your terminal using node, and then open the web app by going to localhost:8000 in your browser.
