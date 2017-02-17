@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+    background-color: #fcfcfc;
+    font-family: "Open Sans", sans-serif;
+}
+
+.big-container {
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.title {
+    padding-bottom: 10px;
+}
+
+.description {
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    color: #4f4f4f;
+    text-align: left;
+}
+
+.commentNumber {
+    text-align: center;
+    padding: 5px;
+}
+
+.comments {
+    margin-bottom: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 5px #888888;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h3 {
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    max-width: 500px;
+}
+
+.grabbable {
+    cursor: pointer;
+}
+
+.voting {
+    display: inline-block;
+    position: absolute;
+    right: 150px;
+}
+
+.toolbar {
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+}
+
+#votingColor {
+    color: firebrick;
+}
+
+.padding {
+    padding 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

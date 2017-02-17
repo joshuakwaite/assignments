@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-xs-12">
+                    <h1 class="text-center">Rock the Vote</h1>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-2" ng-cloak>
+                            <button style="button" class="btn btn-primary form-control" ng-click="newPost.toggleNewPost = !newPost.toggleNewPost">New Post</button>
+                            <br>
+                            <br>
+                            <div ng-show="newPost.toggleNewPost" ng-cloak>
+                                <input type="text" placeholder="Title" class="form-control" ng-model="newPost.title">
+                                <br>
+                                <textarea class="form-control" rows=6 ng-model="newPost.description" placeholder="Description"></textarea>
+                                <br>
+                                <button type="button" class="btn btn-success" ng-click="addPost(newPost)" style="width: 100px;">Post</button> &nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-success" ng-click="newPost.toggleNewPost = !newPost.toggleNewPost" style="width: 100px;">Cancel</button>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <br>
+                        <div ng-hide="newPost.toggleNewPost" ng-cloak>
+                            <div class="col-xs-8 col-xs-offset-2" ng-repeat="x in output | orderBy: '-votes' track by $index" ng-cloak>
+                                <div class="big-container" ng-cloak>
+                                    <div>
+                                        <h3 class="title  grabbable" ng-hide="x.toggleEditPost" ng-click="x.togComments = !x.togComments">{{x.title}}</h3>
+
+                                        <h3 class="voting">
+                                                 <i class="fa fa-thumbs-o-up grabbable" aria-hidden="true" ng-click="clickUp(x)"></i>
+                                                <span id="votingColor">{{x.votes}}</span>
+                                                 <i class="fa fa-thumbs-o-down grabbable" aria-hidden="true" ng-click="clickDown(x)"></i>
+                                             </h3>
+
+                                        <h3 class="grabbable toolbar">
+                                            <i class="fa fa-pencil" aria-hidden="true" ng-click="x.toggleEditPost = !x.toggleEditPost"></i>&nbsp;&nbsp;
+                                             <i class="fa fa-trash-o" aria-hidden="true" ng-click="deletePost(x)"></i>
+                                        </h3>
+                                        <div ng-show="x.toggleEditPost" ng-cloak>
+                                            <h3>
+                                             <input type="text" class="form-control" ng-model="x.title" style="width: 400px;">
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="description" ng-cloak>
+                                        <h4 ng-hide="x.toggleEditPost" ng-click="x.togComments = !x.togComments" class="grabbable">{{x.description}}</h4>
+                                        <div ng-show="x.toggleEditPost" class="text-center">
+                                            <textarea type="text" class="form-control" rows=4 ng-model="x.description"></textarea>
+                                            <button type="button" class="btn btn-success form-control" ng-click="editPost(x)">Submit</button>
+                                        </div>
+                                    </div>
+                                    <div class="commentNumber grabbable" ng-click="x.togComments = !x.togComments" ng-hide="x.toggleEditPost"> Comments: {{x.comments.length}}
+                                    </div>
+                                </div>
+                                <div ng-repeat="comment in x.comments" ng-show="x.togComments == 1">
+                                    <div class="comments">{{comment}}</div>
+                                </div>
+                                <div ng-show="x.togComments == 2" ng-cloak>
+                                    <textarea type="text" class="form-control" rows=4 ng-model="newComment"></textarea>
+                                </div>
+                                <div class="text-center padding" ng-cloak>
+                                    <button ng-show="x.togComments == 1" class="btn btn-success" ng-click="x.togComments = 2">Add Comment</button>
+                                    <button ng-show="x.togComments == 2" class="btn btn-success" ng-click="x.togComments = 1">Cancel</button>
+                                    <button ng-show="x.togComments == 2" class="btn btn-success" ng-click="addComment(x, newComment)">Submit</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services/httpService.js"></script>
+</body>
+
+</html>

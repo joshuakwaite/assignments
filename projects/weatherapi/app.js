@@ -10,6 +10,10 @@ app.config(["$routeProvider", function ($routeProvider) {
             controller: "mainController"
         
         })
+        .when("/about", {
+        templateUrl: "components/about/about.html",
+        controller: "aboutController"
+    })
         .otherwise({
             redirectTo: "/Home"
         });

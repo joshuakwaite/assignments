@@ -30,6 +30,7 @@ app.get('/bounties/:bountyId', function (req, res) {
         if (bounties[i].id === req.params.bountyId) {
             return res.send(bounties[i])
         }
+        
     }
     res.status(404).send({
         message: "Not Found"
