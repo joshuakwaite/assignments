@@ -23,7 +23,7 @@ var issues = [
         id: "12312333",
         comments: [
             "This guy sucks",
-            "I love Trump!",
+            "Go Patriots!",
         ]
     }
 ]
