@@ -1,0 +1,1 @@
+The project requirements for Mom's Shopping List were to create a shopping list that was able to add and delete objects out of the web application via jQuery. We also learned about local, session, and cache storage in preparation for this project.
