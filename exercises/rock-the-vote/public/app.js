@@ -26,8 +26,8 @@ app.controller("mainController", ["$scope", "httpService", function ($scope, htt
 
          httpService.putApi(x).then(function(response){
              console.log(response);
+             $scope.newComment = {}
              getApi();
-             
          })
      }
      

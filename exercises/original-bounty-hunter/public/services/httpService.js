@@ -11,11 +11,11 @@ app.service("httpService", ["$http", function($http) {
     }
     
     this.putApi = function(singleBounty, index) {
-        return $http.put("/bounties/" + singleBounty.id, singleBounty)
+        return $http.put("/bounties/" + singleBounty._id, singleBounty)
     }
     
     this.deleteApi = function(singleBounty) {
-        return $http.delete("/bounties/" + singleBounty.id)
+        return $http.delete("/bounties/" + singleBounty._id)
     }
     
 }])

@@ -66,7 +66,7 @@
                                     <div class="commentNumber grabbable" ng-click="x.togComments = !x.togComments" ng-hide="x.toggleEditPost"> Comments: {{x.comments.length}}
                                     </div>
                                 </div>
-                                <div ng-repeat="comment in x.comments" ng-show="x.togComments == 1">
+                                <div ng-repeat="comment in x.comments track by $index" ng-show="x.togComments == 1">
                                     <div class="comments">{{comment}}</div>
                                 </div>
                                 <div ng-show="x.togComments == 2" ng-cloak>

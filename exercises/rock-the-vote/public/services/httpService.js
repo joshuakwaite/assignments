@@ -12,11 +12,11 @@ app.service("httpService", ["$http", function($http){
     
     this.putApi = function(id) {
         console.log(id)
-        return $http.put("/issues/" + id.id, id)
+        return $http.put("/issues/" + id._id, id)
     }
     
     this.deleteApi = function(id) {
-        return $http.delete("/issues/" + id.id)
+        return $http.delete("/issues/" + id._id)
     }
     
 }])
