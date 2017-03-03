@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc2e2dc6-1714-46d5-b2ff-895708dffbb0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/models/models.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/public/about/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/public/about/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/public/applications/applications.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/public/applications/applications.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/public/dashboard/dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/public/dashboard/dashboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projects/application-tracker/server.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/projects/application-tracker/public/applications/application-modal/app-modal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/projects/application-tracker/public/applications/application-modal/app-modal.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/projects/application-tracker/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/.idea/workspace.xml" afterPath="$PROJECT_DIR$/projects/application-tracker/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/index.html" afterPath="$PROJECT_DIR$/projects/application-tracker/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/models/models.js" afterPath="$PROJECT_DIR$/projects/application-tracker/models/models.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/public/applications/applications.html" afterPath="$PROJECT_DIR$/projects/application-tracker/public/applications/applications.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/public/applications/applications.js" afterPath="$PROJECT_DIR$/projects/application-tracker/public/applications/applications.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/public/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/projects/application-tracker/public/dashboard/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/public/dashboard/dashboard.js" afterPath="$PROJECT_DIR$/projects/application-tracker/public/dashboard/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/public/new-application/new-application.js" afterPath="$PROJECT_DIR$/projects/application-tracker/public/new-application/new-application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/public/styles.css" afterPath="$PROJECT_DIR$/projects/application-tracker/public/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/application-tracker/routes/routes.js" afterPath="$PROJECT_DIR$/projects/application-tracker/routes/routes.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -79,8 +83,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projects/high-score-haven/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="390">
+              <caret line="26" column="66" lean-forward="false" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -671,12 +675,12 @@
       <option name="presentableId" value="Default" />
       <updated>1487695381698</updated>
       <workItem from="1487695383305" duration="36858000" />
-      <workItem from="1488215061363" duration="13325000" />
+      <workItem from="1488215061363" duration="13916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50183000" />
+    <option name="totallyTimeSpent" value="50774000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1111,8 +1115,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/high-score-haven/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="390">
+          <caret line="26" column="66" lean-forward="false" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
           <folding />
         </state>
       </provider>

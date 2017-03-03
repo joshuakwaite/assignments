@@ -8,8 +8,18 @@ app.controller("applicationController", ["$scope", "httpService", function($scop
 
     function getApi() {
         httpService.getApi().then(function (response) {
-            $scope.applications = response.data
-            console.log(response.data[0].date)
+            var applications = response.data
+
+            $scope.applications = []
+
+
+            for (var i = 0; i < applications.length; i++) {
+                applications[i].appliedDate = new Date(applications[i].appliedDate);
+                applications[i].lastFollowUp = new Date(applications[i].lastFollowUp);
+                $scope.applications.push(applications[i])
+
+            }
+
         });
     };
 

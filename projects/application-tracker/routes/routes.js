@@ -5,7 +5,7 @@ var Applications = require("../models/models.js");
 routes.get("/", function(req,res) {
 
     var query = {};
-    if (req.query.date) query.date = req.query.date;
+    if (req.query.applieDate) query.applieDate = req.query.applieDate;
     if (req.query.companyName) query.companyName = req.query.companyName;
     if (req.query.contactName) query.contactName = req.query.contactName;
     if (req.query.position) query.position = req.query.position;
@@ -17,6 +17,7 @@ routes.get("/", function(req,res) {
     if (req.query.contactEmail) query.contactEmail = req.query.contactEmail;
     if (req.query.contactPhone) query.contactPhone = req.query.contactPhone;
     if (req.query.lastFollowUp) query.lastFollowUp = req.query.lastFollowUp;
+    if (req.query.followUpNote) query.followUpNote = req.query.followUpNote;
 
     Applications.find(query, function(err, applications){
         if (err) return res.status(500).send(err);

@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var applicationSchema = new Schema ({
 
-    date: {
+    appliedDate: {
         type: Date,
         default: Date.now
     },
@@ -26,7 +26,8 @@ var applicationSchema = new Schema ({
     lastFollowUp: {
         type: Date,
         default: Date.now
-    }
+    },
+    followUpNote: Schema.Types.Mixed
 })
 
 module.exports = mongoose.model("Application", applicationSchema)
